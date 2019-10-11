@@ -4,28 +4,6 @@
   <meta charset="utf-8">
   <title>WKWK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-    function getUrlVars() {
-      var vars = {};
-      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-          vars[key] = value;
-      });
-      return vars;
-    }
-    
-    function getUrlParam(parameter, defaultvalue){
-      var urlparameter = defaultvalue;
-      if(window.location.href.indexOf(parameter) > -1){
-          urlparameter = getUrlVars()[parameter];
-          }
-      return urlparameter;
-    }
-    document.onload = function (){
-      console.log(getUrlParam('ytID', 'empty'))
-      document.getElementById('wkwkIframe').src = `https://www.youtube.com/embed/XEEasR7hVhA?&autoplay=1&playsinline=1`
-    }
-    
-  </script>
 </head>
 <body>
   <div style="position: fixed;overflow-y: hidden;overflow-x: hidden;width:100%;height:100%; top: 0; left: 0;">
@@ -38,6 +16,29 @@
             scrolling="no" 
             playsinline="1"
             allow="playsinline; accelerometer; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
+            allowfullscreen>
+    </iframe>
   </div>
+</body>
+<script>
+  function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+  }
+
+  function getUrlParam(parameter, defaultvalue){
+    var urlparameter = defaultvalue;
+    if(window.location.href.indexOf(parameter) > -1){
+        urlparameter = getUrlVars()[parameter];
+        }
+    return urlparameter;
+  }
+  document.onload = function (){
+    console.log(getUrlParam('ytID', 'empty'))
+    document.getElementById('wkwkIframe').src = `https://www.youtube.com/embed/XEEasR7hVhA?&autoplay=1&playsinline=1`
+  }   
+</script>
 </html>

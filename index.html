@@ -21,7 +21,8 @@
       return urlparameter;
     }
     document.onload = function (){
-      document.getElementById('wkwkIframe').src = `https://www.youtube.com/embed/${getUrlParam('ytID', '')}?&autoplay=1&playsinline=1`
+      console.log(getUrlParam('ytID', 'empty'))
+      document.getElementById('wkwkIframe').src = `https://www.youtube.com/embed/XEEasR7hVhA?&autoplay=1&playsinline=1`
     }
     
   </script>
@@ -34,6 +35,7 @@
             autoplay="1" 
             frameborder="0" 
             scrolling="no" 
+            playsinline="1"
             allow="playsinline; accelerometer; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>
   </div>

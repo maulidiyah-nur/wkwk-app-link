@@ -38,8 +38,8 @@
   }
   
   function setUrl(){
-    console.log(getUrlParam('ytID', 'empty'))
-    document.getElementById('wkwkIframe').src = `https://www.youtube.com/embed/XEEasR7hVhA?&autoplay=1&playsinline=1`
+    const ytID = getUrlParam('ytID', 'empty')
+    document.getElementById('wkwkIframe').src = `https://www.youtube.com/embed/${ytID}?&autoplay=1&playsinline=1`
   }   
 </script>
 </html>
